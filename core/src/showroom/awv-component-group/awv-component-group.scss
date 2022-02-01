@@ -1,0 +1,69 @@
+@import '../../global/variables';
+
+@mixin box {
+  padding: $spaces-050;
+  border-radius: $border-radius-050;
+  border: $border-1-gray;
+}
+
+:host {
+  display: block;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+header {
+  padding: $spaces-050;
+  border-radius: $border-radius-050;
+  border: $border-1-gray;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+
+  transition: border-bottom-left-radius 1s ease-in-out,
+              border-bottom-right-radius 1s ease-in-out;
+
+  & h1 {
+    margin: 0;
+    padding: 0;
+    font-size: $font-size-small;
+  }
+
+  &:hover {
+    background-color: $color-primary-light;
+    color: $color-font-light;
+  }
+
+  &.opened {
+    background-color: $color-primary-light;
+    color: $color-font-light;
+    border-bottom: unset;
+    border-bottom-left-radius: unset;
+    border-bottom-right-radius: unset;
+  }
+}
+
+.content {
+  padding: $spaces-050;
+  border: $border-1-gray;
+  border-top: unset;
+  border-bottom-left-radius: $border-radius-050;
+  border-bottom-right-radius: $border-radius-050;
+
+  max-height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  transition: max-height 0.6s ease-in-out,
+              visibility 0.6s ease-in-out;
+
+
+  &.opened {
+    max-height: 2000px;
+    visibility: visible;
+    margin-bottom: 20px;
+
+    border-top: unset;
+  }
+}

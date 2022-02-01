@@ -5,6 +5,8 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { ButtonType, ButtonVariant } from "./components/aw-button/types";
+import { Direction, Size } from "./components/icons/types";
 export namespace Components {
     interface AwButton {
         /**
@@ -21,13 +23,28 @@ export namespace Components {
           * @values button, submit
           * @default button
          */
-        "type"?: 'button' | 'submit';
+        "type"?: ButtonType;
         /**
           * Button variant
           * @values primary, danger, warning, outline
           * @default primary
          */
-        "variant"?: 'primary' | 'success' | 'danger' | 'warning' | 'outline';
+        "variant"?: ButtonVariant;
+    }
+    interface AwIconArrow {
+        "color"?: string;
+        "direction"?: Direction;
+        "noTransition"?: boolean;
+        "size"?: Size;
+    }
+    interface AwIconSearch {
+        "color"?: string;
+        "direction"?: Direction;
+        "noTransition"?: boolean;
+        "size"?: Size;
+    }
+    interface AwvComponentGroup {
+        "title": string;
     }
 }
 declare global {
@@ -37,8 +54,29 @@ declare global {
         prototype: HTMLAwButtonElement;
         new (): HTMLAwButtonElement;
     };
+    interface HTMLAwIconArrowElement extends Components.AwIconArrow, HTMLStencilElement {
+    }
+    var HTMLAwIconArrowElement: {
+        prototype: HTMLAwIconArrowElement;
+        new (): HTMLAwIconArrowElement;
+    };
+    interface HTMLAwIconSearchElement extends Components.AwIconSearch, HTMLStencilElement {
+    }
+    var HTMLAwIconSearchElement: {
+        prototype: HTMLAwIconSearchElement;
+        new (): HTMLAwIconSearchElement;
+    };
+    interface HTMLAwvComponentGroupElement extends Components.AwvComponentGroup, HTMLStencilElement {
+    }
+    var HTMLAwvComponentGroupElement: {
+        prototype: HTMLAwvComponentGroupElement;
+        new (): HTMLAwvComponentGroupElement;
+    };
     interface HTMLElementTagNameMap {
         "aw-button": HTMLAwButtonElement;
+        "aw-icon-arrow": HTMLAwIconArrowElement;
+        "aw-icon-search": HTMLAwIconSearchElement;
+        "awv-component-group": HTMLAwvComponentGroupElement;
     }
 }
 declare namespace LocalJSX {
@@ -57,16 +95,34 @@ declare namespace LocalJSX {
           * @values button, submit
           * @default button
          */
-        "type"?: 'button' | 'submit';
+        "type"?: ButtonType;
         /**
           * Button variant
           * @values primary, danger, warning, outline
           * @default primary
          */
-        "variant"?: 'primary' | 'success' | 'danger' | 'warning' | 'outline';
+        "variant"?: ButtonVariant;
+    }
+    interface AwIconArrow {
+        "color"?: string;
+        "direction"?: Direction;
+        "noTransition"?: boolean;
+        "size"?: Size;
+    }
+    interface AwIconSearch {
+        "color"?: string;
+        "direction"?: Direction;
+        "noTransition"?: boolean;
+        "size"?: Size;
+    }
+    interface AwvComponentGroup {
+        "title"?: string;
     }
     interface IntrinsicElements {
         "aw-button": AwButton;
+        "aw-icon-arrow": AwIconArrow;
+        "aw-icon-search": AwIconSearch;
+        "awv-component-group": AwvComponentGroup;
     }
 }
 export { LocalJSX as JSX };
@@ -74,6 +130,9 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "aw-button": LocalJSX.AwButton & JSXBase.HTMLAttributes<HTMLAwButtonElement>;
+            "aw-icon-arrow": LocalJSX.AwIconArrow & JSXBase.HTMLAttributes<HTMLAwIconArrowElement>;
+            "aw-icon-search": LocalJSX.AwIconSearch & JSXBase.HTMLAttributes<HTMLAwIconSearchElement>;
+            "awv-component-group": LocalJSX.AwvComponentGroup & JSXBase.HTMLAttributes<HTMLAwvComponentGroupElement>;
         }
     }
 }

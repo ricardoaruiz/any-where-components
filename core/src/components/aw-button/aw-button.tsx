@@ -1,5 +1,7 @@
 import { Component, h, Prop } from '@stencil/core';
 
+import { ButtonType, ButtonVariant } from './types'
+
 @Component({
   tag: 'aw-button',
   styleUrl: 'aw-button.scss',
@@ -13,7 +15,7 @@ export class AwButton {
    * @default button
    */
   @Prop()
-  type?: 'button' | 'submit' = 'button'
+  type?: ButtonType = 'button'
 
   /**
    * Button variant
@@ -21,7 +23,7 @@ export class AwButton {
    * @default primary
    */
   @Prop()
-  variant?: 'primary' | 'success' | 'danger' | 'warning' | 'outline' = 'primary'
+  variant?: ButtonVariant = 'primary'
 
   /**
    * Define if buttons is disabled

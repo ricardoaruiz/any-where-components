@@ -15,27 +15,28 @@
         --xcolor-primary-dark: #036603;
         --xcolor-primary-darker: #023a02;
       }
+
       * {
         font-family: sans-serif;
         box-sizing: border-box;
       }
-      .group-container {
-        max-width: 800px;
-        margin: 0 auto 20px auto;
-      }
-      .button-container {
+      .container-flex-column {
         margin-bottom: 20px;
         display: flex;
         flex-direction: column;
         gap: 10px;
       }
+      .container-flex-row {
+        margin-bottom: 20px;
+        display: flex;
+        gap: 10px;
+      }
     </style>
   </head>
   <body>
-    <div class="group-container">
-      <h1>Buttons</h1>
-
-      <div class="button-container">
+    <!-- Buttons -->
+    <awv-component-group title="Buttons">
+      <div class="container-flex-column">
         <aw-button
           id="primary"
         >
@@ -53,11 +54,16 @@
           id="primary-blocked"
           blocked="true"
         >
+          <aw-icon-arrow
+            direction="down"
+            color="#fff"
+          >
+          </aw-icon-arrow>
           Primary Blocked
         </aw-button>
       </div>
 
-      <div class="button-container">
+      <div class="container-flex-column">
         <aw-button
           id="success"
           variant="success"
@@ -80,10 +86,11 @@
           disabled
         >
           Success disabled and block
+          <aw-icon-search color="#fff"></aw-icon-search>
         </aw-button>
       </div>
 
-      <div class="button-container">
+      <div class="container-flex-column">
         <aw-button
           id="danger"
           variant="danger"
@@ -110,7 +117,7 @@
         </aw-button>
       </div>
 
-      <div class="button-container">
+      <div class="container-flex-column">
         <aw-button
           id="warning"
           variant="warning"
@@ -135,7 +142,7 @@
         </aw-button>
       </div>
 
-      <div class="button-container">
+      <div class="container-flex-column">
         <aw-button
           id="outline"
           variant="outline"
@@ -157,14 +164,67 @@
           disabled
           blocked
         >
+          <aw-icon-search color="gray"></aw-icon-search>
           Outline Disabled and blocked
         </aw-button>
       </div>
 
       <h2 id="buttonClicked"> </h2>
-    </div>
+    </awv-component-group>
 
-    <hr>
+    <!-- Icons -->
+    <awv-component-group title="Icons">
+      <div>
+        <h3>Arrow</h3>
+        <div class="container-flex-row">
+          <aw-icon-arrow
+            id="firstArrowIcon"
+            direction="up"
+          ></aw-icon-arrow>
+
+          <aw-icon-arrow
+            id="secondArrowIcon"
+            direction="right"
+            size="medium"
+            color="blue"
+            noTransition="true"
+          ></aw-icon-arrow>
+
+          <aw-icon-arrow
+            size="large"
+            color="#f00">
+          </aw-icon-arrow>
+
+          <aw-icon-arrow
+            color="green"
+            direction="left"
+            size="huge">
+          </aw-icon-arrow>
+        </div>
+      </div>
+
+      <div>
+        <h3>Search</h3>
+        <div class="container-flex-row">
+          <aw-icon-search></aw-icon-search>
+          <aw-icon-search
+            size="medium"
+            color="blue"
+          ></aw-icon-search>
+
+          <aw-icon-search
+            size="large"
+            color="#f00">
+          </aw-icon-search>
+
+          <aw-icon-search
+            direction="inverse"
+            color="green"
+            size="huge">
+          </aw-icon-search>
+        </div>
+      </div>
+    </awv-component-group>
 
   </body>
 
@@ -198,6 +258,21 @@
 
     document.querySelector('#outline').addEventListener('click', () => {
       buttonClicked.innerHTML = 'The outlineButton was clicked'
+    })
+
+    const firstArrowIcon = document.querySelector('#firstArrowIcon')
+    firstArrowIcon.addEventListener('click', () => {
+      firstArrowIcon.getAttribute('direction') === 'up'
+        ? firstArrowIcon.setAttribute('direction','down')
+        : firstArrowIcon.setAttribute('direction','up')
+    })
+
+    const secondArrowIcon = document.querySelector('#secondArrowIcon')
+    secondArrowIcon.noTransition = true
+    secondArrowIcon.addEventListener('click', () => {
+      secondArrowIcon.getAttribute('direction') === 'right'
+        ? secondArrowIcon.setAttribute('direction','left')
+        : secondArrowIcon.setAttribute('direction','right')
     })
   </script>
 </html>
