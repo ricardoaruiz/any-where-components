@@ -1,0 +1,83 @@
+@use "sass:map";
+@import '../../global/variables';
+
+@mixin variant($variant: 'primary') {
+  background-color: map.get($colors-map, $variant);
+
+  &:hover {
+    background-color: map.get($colors-map, "#{$variant}-dark");
+  }
+  &:active {
+    background-color: map.get($colors-map, "#{$variant}-darker");
+  }
+  &:disabled {
+    background-color: map.get($colors-map, "#{$variant}-light");
+  }
+  &:focus {
+    border: 2px solid map.get($colors-map, "#{$variant}-darker");
+  }
+}
+
+:host([blocked=true]),
+:host([blocked]) {
+  flex: 1;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+  padding: 0.5rem 0.75rem;
+  border: 2px solid transparent;
+  border-radius: $border-radius-025;
+  font-size: 1rem;
+  font-weight: 600;
+
+  color: $color-font-light;
+
+  &.primary {
+    @include variant('primary');
+  }
+
+  &.success {
+    @include variant('success');
+  }
+
+  &.danger {
+    @include variant('danger');
+  }
+
+  &.warning {
+    @include variant('warning');
+  }
+
+  &.outline {
+    background-color: $color-outline;
+    border: $border-2-dark;
+    color: $color-font-dark;
+
+    &:hover {
+      background-color: $color-outline-dark;
+      color: $color-font-light;
+    }
+    &:active {
+      background-color: $color-outline-darker;
+    }
+    &:disabled {
+      background-color: transparent;
+      border: $border-2-gray;
+      color: $color-font-gray;
+    }
+    &:focus {
+      border: 2px solid darken($color-black, 30%);
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &.blocked {
+    width: 100%;
+  }
+}
+

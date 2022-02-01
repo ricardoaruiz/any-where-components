@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/aw-components.esm.js"></script>
+    <script nomodule src="/build/aw-components.js"></script>
+
+    <style>
+      :root {
+        --xcolor-primary: #008000;
+        --xcolor-primary-light: #9edf9e;
+        --xcolor-primary-dark: #036603;
+        --xcolor-primary-darker: #023a02;
+      }
+      * {
+        font-family: sans-serif;
+        box-sizing: border-box;
+      }
+      .group-container {
+        max-width: 800px;
+        margin: 0 auto 20px auto;
+      }
+      .button-container {
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="group-container">
+      <h1>Buttons</h1>
+
+      <div class="button-container">
+        <aw-button
+          id="primary"
+        >
+          Primary
+        </aw-button>
+
+        <aw-button
+          id="primary-disabled"
+          disabled
+        >
+          Primary disabled
+        </aw-button>
+
+        <aw-button
+          id="primary-blocked"
+          blocked="true"
+        >
+          Primary Blocked
+        </aw-button>
+      </div>
+
+      <div class="button-container">
+        <aw-button
+          id="success"
+          variant="success"
+        >
+          Success
+        </aw-button>
+
+        <aw-button
+          id="success-disabled"
+          variant="success"
+          disabled
+        >
+          Success disabled
+        </aw-button>
+
+        <aw-button
+          id="success-blocked"
+          variant="success"
+          blocked
+          disabled
+        >
+          Success disabled and block
+        </aw-button>
+      </div>
+
+      <div class="button-container">
+        <aw-button
+          id="danger"
+          variant="danger"
+          blocked="false"
+        >
+          Danger
+        </aw-button>
+
+        <aw-button
+          id="danger-disabled"
+          variant="danger"
+          disabled="true"
+        >
+          Danger disabled
+        </aw-button>
+
+        <aw-button
+          id="danger-blocked"
+          variant="danger"
+          disabled="true"
+          blocked="true"
+        >
+          Danger disabled and blocked
+        </aw-button>
+      </div>
+
+      <div class="button-container">
+        <aw-button
+          id="warning"
+          variant="warning"
+        >
+          Warning
+        </aw-button>
+
+        <aw-button
+          id="warning-disabled"
+          variant="warning"
+          disabled={true}
+        >
+          Warning Disabled
+        </aw-button>
+
+        <aw-button
+          id="warning-blocked"
+          variant="warning"
+          blocked
+        >
+          Warning
+        </aw-button>
+      </div>
+
+      <div class="button-container">
+        <aw-button
+          id="outline"
+          variant="outline"
+        >
+          Outline
+        </aw-button>
+
+        <aw-button
+          id="outline-disabled"
+          variant="outline"
+          disabled
+        >
+          Outline Disabled
+        </aw-button>
+
+        <aw-button
+          id="outline-blocked"
+          variant="outline"
+          disabled
+          blocked
+        >
+          Outline Disabled and blocked
+        </aw-button>
+      </div>
+
+      <h2 id="buttonClicked"> </h2>
+    </div>
+
+    <hr>
+
+  </body>
+
+  <script>
+    const buttonClicked = document.querySelector('#buttonClicked')
+    buttonClicked.innerHTML = 'Click any above button'
+
+    document.querySelector('#primary').addEventListener('click', () => {
+      buttonClicked.innerHTML = 'The primaryButton was clicked'
+    })
+
+    document.querySelector('#primary-blocked').addEventListener('click', () => {
+      buttonClicked.innerHTML = 'The primaryBlockedButton was clicked'
+    })
+
+    document.querySelector('#success').addEventListener('click', () => {
+      buttonClicked.innerHTML = 'The successButton was clicked'
+    })
+
+    document.querySelector('#danger').addEventListener('click', () => {
+      buttonClicked.innerHTML = 'The dangerButton was clicked'
+    })
+
+    document.querySelector('#warning').addEventListener('click', () => {
+      buttonClicked.innerHTML = 'The warningButton was clicked'
+    })
+
+    document.querySelector('#warning-blocked').addEventListener('click', () => {
+      buttonClicked.innerHTML = 'The warningBlockedButton was clicked'
+    })
+
+    document.querySelector('#outline').addEventListener('click', () => {
+      buttonClicked.innerHTML = 'The outlineButton was clicked'
+    })
+  </script>
+</html>

@@ -1,0 +1,80 @@
+// Basic Colors
+$color-white: #fff;
+$color-black: #333;
+$color-gray: #8a8a8a;
+$color-blue: #2222ff;
+$color-green: #23e052;
+$color-red: #ff2424;
+$color-orange: #e9731f;
+
+// Variant Colors
+$color-primary: var(--color-primary, $color-blue);
+$color-primary-light: var(--color-primary-light, lighten($color-blue, 15%));
+$color-primary-dark: var(--color-primary-dark, darken($color-blue, 15%));
+$color-primary-darker: var(--color-primary-darker, darken($color-blue, 30%));
+
+$color-success: var(--color-success, $color-green);
+$color-success-light: var(--color-success-light, lighten($color-green, 15%));
+$color-success-dark: var(--color-success-dark, darken($color-green, 15%));
+$color-success-darker: var(--color-success-darker, darken($color-green, 30%));
+
+$color-danger: var(--color-danger, $color-red);
+$color-danger-light: var(--color-danger-light, lighten($color-red, 15%));
+$color-danger-dark: var(--color-danger-dark, darken($color-red, 15%));
+$color-danger-darker: var(--color-danger-darker, darken($color-red, 30%));
+
+$color-warning: var(--color-warning, $color-orange);
+$color-warning-light: var(--color-warning-light, lighten($color-orange, 15%));
+$color-warning-dark: var(--color-warning-dark, darken($color-orange, 15%));
+$color-warning-darker: var(--color-warning-darker, darken($color-orange, 30%));
+
+$color-outline: transparent;
+$color-outline-light: var(--color-outline-light, lighten($color-black, 10%));
+$color-outline-dark: var(--color-outline-dark, $color-black);
+$color-outline-darker: var(--color-outline-darker, darken($color-black, 30%));
+
+// Font colors
+$color-font-light: var(--color-font-light, $color-white);
+$color-font-dark: var(--color-font-dark, $color-black);
+$color-font-gray: var(--color-font-gray, $color-gray);
+
+// Borders
+$border-2-white: 2px solid $color-white;
+$border-2-dark: 2px solid $color-black;
+$border-2-gray: 2px solid $color-gray;
+
+// Border radius
+$border-radius-025: 0.25rem;
+$border-radius-05: 0.5rem;
+$border-radius-075: 0.75rem;
+$border-radius-1: 1rem;
+
+// Variant Colors Map
+$colors-map: (
+  "primary": $color-primary,
+  "primary-light": $color-primary-light,
+  "primary-dark": $color-primary-dark,
+  "primary-darker": $color-primary-darker,
+
+  "success": $color-success,
+  "success-light": $color-success-light,
+  "success-dark": $color-success-dark,
+  "success-darker": $color-success-darker,
+
+  "danger": $color-danger,
+  "danger-light": $color-danger-light,
+  "danger-dark": $color-danger-dark,
+  "danger-darker": $color-danger-darker,
+
+  "warning": $color-warning,
+  "warning-light": $color-warning-light,
+  "warning-dark": $color-warning-dark,
+  "warning-darker": $color-warning-darker,
+
+  "outline": $color-outline,
+  "outline-light": $color-outline-light,
+  "outline-dark": $color-outline-dark,
+  "outline-darker": $color-outline-darker,
+);
+
+
