@@ -1,6 +1,6 @@
 import { Component, h, Prop } from '@stencil/core';
 
-import { ButtonType, ButtonVariant } from './types'
+import { ButtonSize, ButtonType, ButtonVariant } from './types'
 
 @Component({
   tag: 'aw-button',
@@ -40,6 +40,13 @@ export class AwButton {
   blocked?: boolean = false
 
   /**
+   * Define button size
+   * @default medium
+   */
+  @Prop()
+  size?: ButtonSize = 'medium'
+
+  /**
    * Render the component
    * @returns component
    */
@@ -50,6 +57,7 @@ export class AwButton {
      */
     const classes = `
       ${this.variant}
+      ${this.size}
       ${this.blocked && 'blocked'}
     `
 

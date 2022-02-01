@@ -23,6 +23,7 @@ export class AwIconArrowDown {
   size?: Size = 'small'
 
   render() {
+
     const containerStyles = {
       ...getSize(this.size)
     }

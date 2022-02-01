@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { ButtonType, ButtonVariant } from "./components/aw-button/types";
+import { ButtonSize, ButtonType, ButtonVariant } from "./components/aw-button/types";
 import { Direction, Size } from "./components/icons/types";
 export namespace Components {
     interface AwButton {
@@ -18,6 +18,11 @@ export namespace Components {
           * @default false
          */
         "disabled"?: boolean;
+        /**
+          * Define button size
+          * @default medium
+         */
+        "size"?: ButtonSize;
         /**
           * Button type
           * @values button, submit
@@ -90,6 +95,11 @@ declare namespace LocalJSX {
           * @default false
          */
         "disabled"?: boolean;
+        /**
+          * Define button size
+          * @default medium
+         */
+        "size"?: ButtonSize;
         /**
           * Button type
           * @values button, submit

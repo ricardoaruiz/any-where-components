@@ -26,10 +26,8 @@
 button {
   cursor: pointer;
   outline: none;
-  padding: 0.5rem 0.75rem;
   border: 2px solid transparent;
   border-radius: $border-radius-025;
-  font-size: 1rem;
   font-weight: 600;
 
   display: flex;
@@ -78,6 +76,26 @@ button {
 
   &:disabled {
     cursor: not-allowed;
+  }
+
+  &.small {
+    font-size: $font-size-small;
+    padding: $spaces-025 $spaces-050;
+  }
+
+  &.medium {
+    font-size: $font-size-medium;
+    padding: $spaces-050 $spaces-075;
+  }
+
+  &.large {
+    font-size: $font-size-large;
+    padding: $spaces-075 $spaces-1;
+  }
+
+  &.huge {
+    font-size: $font-size-xlarge;
+    padding: $spaces-1 $spaces-125;
   }
 
   &.blocked {
