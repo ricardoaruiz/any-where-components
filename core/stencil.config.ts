@@ -1,9 +1,15 @@
 import { Config } from '@stencil/core';
+import { reactOutputTarget as react } from '@stencil/react-output-target';
 import { sass } from '@stencil/sass';
 
 export const config: Config = {
   namespace: 'aw-components',
   outputTargets: [
+    react({
+      componentCorePackage: 'aw-components',
+      proxiesFile: '../react/src/components/stencil-generated/index.ts',
+      includeDefineCustomElements: true,
+    }),
     {
       type: 'dist',
       esmLoaderPath: '../loader',

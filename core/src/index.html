@@ -237,20 +237,5 @@
     document.querySelector('#outline').addEventListener('click', () => {
       buttonClicked.innerHTML = 'The outlineButton was clicked'
     })
-
-    const firstArrowIcon = document.querySelector('#firstArrowIcon')
-    firstArrowIcon.addEventListener('click', () => {
-      firstArrowIcon.getAttribute('direction') === 'up'
-        ? firstArrowIcon.setAttribute('direction','down')
-        : firstArrowIcon.setAttribute('direction','up')
-    })
-
-    const secondArrowIcon = document.querySelector('#secondArrowIcon')
-    secondArrowIcon.noTransition = true
-    secondArrowIcon.addEventListener('click', () => {
-      secondArrowIcon.getAttribute('direction') === 'right'
-        ? secondArrowIcon.setAttribute('direction','left')
-        : secondArrowIcon.setAttribute('direction','right')
-    })
   </script>
 </html>
