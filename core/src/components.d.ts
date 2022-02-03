@@ -8,6 +8,14 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { ButtonSize, ButtonType, ButtonVariant } from "./components/aw-button/types";
 import { Direction, Size } from "./components/icons/types";
 export namespace Components {
+    interface AwAccordion {
+        "exclusive": boolean;
+    }
+    interface AwAccordionContent {
+        "isOpened"?: boolean;
+        "name": string;
+        "title": string;
+    }
     interface AwButton {
         /**
           * Define if button takes all width of container or if container is a flex, the button assume flex=1
@@ -53,6 +61,18 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLAwAccordionElement extends Components.AwAccordion, HTMLStencilElement {
+    }
+    var HTMLAwAccordionElement: {
+        prototype: HTMLAwAccordionElement;
+        new (): HTMLAwAccordionElement;
+    };
+    interface HTMLAwAccordionContentElement extends Components.AwAccordionContent, HTMLStencilElement {
+    }
+    var HTMLAwAccordionContentElement: {
+        prototype: HTMLAwAccordionContentElement;
+        new (): HTMLAwAccordionContentElement;
+    };
     interface HTMLAwButtonElement extends Components.AwButton, HTMLStencilElement {
     }
     var HTMLAwButtonElement: {
@@ -78,6 +98,8 @@ declare global {
         new (): HTMLAwvComponentGroupElement;
     };
     interface HTMLElementTagNameMap {
+        "aw-accordion": HTMLAwAccordionElement;
+        "aw-accordion-content": HTMLAwAccordionContentElement;
         "aw-button": HTMLAwButtonElement;
         "aw-icon-arrow": HTMLAwIconArrowElement;
         "aw-icon-search": HTMLAwIconSearchElement;
@@ -85,6 +107,15 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface AwAccordion {
+        "exclusive"?: boolean;
+    }
+    interface AwAccordionContent {
+        "isOpened"?: boolean;
+        "name"?: string;
+        "onAwOnAccordionContentToggle"?: (event: CustomEvent<string>) => void;
+        "title"?: string;
+    }
     interface AwButton {
         /**
           * Define if button takes all width of container or if container is a flex, the button assume flex=1
@@ -130,6 +161,8 @@ declare namespace LocalJSX {
         "title"?: string;
     }
     interface IntrinsicElements {
+        "aw-accordion": AwAccordion;
+        "aw-accordion-content": AwAccordionContent;
         "aw-button": AwButton;
         "aw-icon-arrow": AwIconArrow;
         "aw-icon-search": AwIconSearch;
@@ -140,6 +173,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "aw-accordion": LocalJSX.AwAccordion & JSXBase.HTMLAttributes<HTMLAwAccordionElement>;
+            "aw-accordion-content": LocalJSX.AwAccordionContent & JSXBase.HTMLAttributes<HTMLAwAccordionContentElement>;
             "aw-button": LocalJSX.AwButton & JSXBase.HTMLAttributes<HTMLAwButtonElement>;
             "aw-icon-arrow": LocalJSX.AwIconArrow & JSXBase.HTMLAttributes<HTMLAwIconArrowElement>;
             "aw-icon-search": LocalJSX.AwIconSearch & JSXBase.HTMLAttributes<HTMLAwIconSearchElement>;

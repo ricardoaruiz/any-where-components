@@ -1,0 +1,43 @@
+@import '../../global/variables';
+
+:host {
+  display: block;
+  border-radius: $border-radius-025;
+  border: 1px solid $color-primary-darker;
+}
+
+.accordion_content {
+  & header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $spaces-1;
+    background-color: $color-primary;
+    color: $color-font-light;
+    cursor: pointer;
+
+    & h3 {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  & .main-content {
+    padding: 0 $spaces-1;
+    max-height: 0;
+    visibility: hidden;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out,
+                opacity 0.4s ease-out,
+                visibility 0.2s ease-out,
+                padding 0.6s ease-out;
+
+    &.--opened {
+      padding: $spaces-1;
+      max-height: 2000px;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
