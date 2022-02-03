@@ -3,16 +3,19 @@
     <h1>Vue</h1>
     <aw-button 
       id="primary" 
-      @click="sayHello" 
+      @click="sayHello"
+      @awclicked="sayHelloCustom"
       variant="primary" 
       blocked
     >
       Botão
     </aw-button>
+    <p>This button was clicked {{numClicks}} times</p>
 
     <aw-button 
       id="secondary" 
       @click="sayHello" 
+      @awclicked="sayHelloCustom"
       variant="warning" 
       blocked 
       disabled
@@ -27,21 +30,19 @@
 
   export default defineComponent({
     name: 'App',
-    mounted() {
-      const primaryButton = document.querySelector('#primary')      
-      primaryButton && primaryButton.addEventListener('awClicked1', this.sayHelloCustom)
-    },    
-    methods: {
-      sayHello: function() {
-        console.log('Hello Vue')
-      },
-      sayHelloCustom: function() {
-        console.log('Hello Vue - customEvent')
+    data() {
+      return {
+        numClicks: 0
       }
     },
-    beforeDestroy() {
-      const primaryButton = document.querySelector('#primary')
-      primaryButton && primaryButton.removeEventListener('awClicked1', this.sayHelloCustom)
+    methods: {
+      sayHello: function() {
+        console.log('Hello Vue - sayHelloNativeEvent')
+      },
+      sayHelloCustom: function() {
+        console.log('Hello Vue - sayHelloCustomEvent')
+        this.numClicks = this.numClicks + 1
+      }
     }
   });
 </script>

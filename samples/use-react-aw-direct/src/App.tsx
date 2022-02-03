@@ -3,14 +3,16 @@ import './App.css';
 
 function App() {
 
+  const [numClicks, setNumClicks] = React.useState(0)
   const primaryRef = React.useRef<HTMLElement | null>()
 
   const sayHello = () => {
-    console.log('Hello React Direct')
+    console.log('Hello React Direct - sayHelloNativeEvent')
   }
 
   const sayHelloCustomEvent = () => {
     console.log('Hello React Direct - sayHelloCustomEvent')
+    setNumClicks(state => state + 1)
   }
 
   React.useEffect(() => {
@@ -35,6 +37,8 @@ function App() {
       >
         Botão
       </aw-button>
+      <p>This button was clicked {numClicks} times</p>
+
       <aw-button
         variant='warning'
         blocked

@@ -1,15 +1,19 @@
+import React from 'react'
 import { AwButton } from 'react-aw'
 
 import './App.css'
 
 function App() {
 
+  const [numClicks, setNumClicks] = React.useState(0)
+
   const sayHello = () => {
-    console.log('Hello React')
+    console.log('Hello React - sayHelloNativeEvent')
   }
 
   const sayHelloCustomEvent = () => {
     console.log('Hello React - sayHelloCustomEvent')
+    setNumClicks(state => state + 1)
   }
 
   return (
@@ -25,6 +29,8 @@ function App() {
         >
           Botão
         </AwButton>
+        <p>This button was clicked {numClicks} times</p>
+
         <AwButton
           variant='warning'
           blocked
