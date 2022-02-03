@@ -1,24 +1,47 @@
 <template>
   <div class="container">
     <h1>Vue</h1>
-    <aw-button v-on:click="sayHello" variant="primary" blocked>Botão</aw-button>
-    <aw-button v-on:click="sayHello" variant="warning" blocked>Botão</aw-button>
+    <aw-button 
+      id="primary" 
+      @click="sayHello" 
+      variant="primary" 
+      blocked
+    >
+      Botão
+    </aw-button>
+
+    <aw-button 
+      id="secondary" 
+      @click="sayHello" 
+      variant="warning" 
+      blocked 
+      disabled
+    >
+      Botão
+    </aw-button>
   </div>
 </template>
 
 <script lang="ts">
   import { defineComponent } from 'vue';
-  import HelloWorld from './components/HelloWorld.vue';
 
   export default defineComponent({
     name: 'App',
-    components: {
-      HelloWorld
-    },
+    mounted() {
+      const primaryButton = document.querySelector('#primary')      
+      primaryButton && primaryButton.addEventListener('awClicked1', this.sayHelloCustom)
+    },    
     methods: {
       sayHello: function() {
         console.log('Hello Vue')
+      },
+      sayHelloCustom: function() {
+        console.log('Hello Vue - customEvent')
       }
+    },
+    beforeDestroy() {
+      const primaryButton = document.querySelector('#primary')
+      primaryButton && primaryButton.removeEventListener('awClicked1', this.sayHelloCustom)
     }
   });
 </script>

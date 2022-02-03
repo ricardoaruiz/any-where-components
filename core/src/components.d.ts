@@ -95,6 +95,7 @@ declare namespace LocalJSX {
           * @default false
          */
         "disabled"?: boolean;
+        "onAwClicked"?: (event: CustomEvent<void>) => void;
         /**
           * Define button size
           * @default medium

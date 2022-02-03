@@ -16,6 +16,13 @@
 | `variant`  | `variant`  | Button variant                                                                                    | `"danger" \| "outline" \| "primary" \| "success" \| "warning"` | `'primary'` |
 
 
+## Events
+
+| Event       | Description | Type                |
+| ----------- | ----------- | ------------------- |
+| `awClicked` |             | `CustomEvent<void>` |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

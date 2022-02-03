@@ -8,20 +8,29 @@ function App() {
     console.log('Hello React')
   }
 
+  const sayHelloCustomEvent = () => {
+    console.log('Hello React - sayHelloCustomEvent')
+  }
+
   return (
     <div className="container">
         <h1>React</h1>
+        <h2>With Wrapper Lib React</h2>
+
         <AwButton
           variant='primary'
           blocked
           onClick={sayHello}
+          onAwClicked={sayHelloCustomEvent}
         >
           Botão
         </AwButton>
         <AwButton
           variant='warning'
           blocked
+          disabled
           onClick={sayHello}
+          onAwClicked={sayHelloCustomEvent}
         >
           Botão
         </AwButton>

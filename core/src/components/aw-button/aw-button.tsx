@@ -1,4 +1,4 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, h, Prop, Event, EventEmitter } from '@stencil/core';
 
 import { ButtonSize, ButtonType, ButtonVariant } from './types'
 
@@ -46,6 +46,13 @@ export class AwButton {
   @Prop()
   size?: ButtonSize = 'medium'
 
+  @Event({
+    eventName: 'awClicked',
+    bubbles: true,
+    composed: true
+  })
+  awClicked: EventEmitter<void>
+
   /**
    * Render the component
    * @returns component
@@ -67,6 +74,7 @@ export class AwButton {
         class={classes}
         disabled={this.disabled}
         tabIndex={1}
+        onClick={() => this.awClicked.emit()}
       >
         <slot />
       </button>
