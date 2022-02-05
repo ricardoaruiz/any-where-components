@@ -1,3 +1,9 @@
+@import '../../../global/variables';
+
 :host {
   display: block;
+}
+
+.icon-container {
+  color: $color-black;
 }

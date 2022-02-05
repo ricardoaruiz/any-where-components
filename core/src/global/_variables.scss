@@ -13,26 +13,31 @@ $color-primary: var(--color-primary, $color-blue) !default;
 $color-primary-light: var(--color-primary-light, lighten($color-blue, 15%));
 $color-primary-dark: var(--color-primary-dark, darken($color-blue, 15%));
 $color-primary-darker: var(--color-primary-darker, darken($color-blue, 30%));
+$color-primary-invert: var(--color-primary-invert, invert($color-blue));
 
 $color-success: var(--color-success, $color-green);
 $color-success-light: var(--color-success-light, lighten($color-green, 15%));
 $color-success-dark: var(--color-success-dark, darken($color-green, 15%));
 $color-success-darker: var(--color-success-darker, darken($color-green, 30%));
+$color-success-invert: var(--color-success-invert, invert($color-green));
 
 $color-danger: var(--color-danger, $color-red);
 $color-danger-light: var(--color-danger-light, lighten($color-red, 15%));
 $color-danger-dark: var(--color-danger-dark, darken($color-red, 15%));
 $color-danger-darker: var(--color-danger-darker, darken($color-red, 30%));
+$color-danger-invert: var(--color-danger-invert, invert($color-red));
 
 $color-warning: var(--color-warning, $color-orange);
 $color-warning-light: var(--color-warning-light, lighten($color-orange, 15%));
 $color-warning-dark: var(--color-warning-dark, darken($color-orange, 15%));
 $color-warning-darker: var(--color-warning-darker, darken($color-orange, 30%));
+$color-warning-invert: var(--color-warning-invert, invert($color-orange));
 
 $color-outline: transparent;
 $color-outline-light: var(--color-outline-light, lighten($color-black, 10%));
 $color-outline-dark: var(--color-outline-dark, $color-black);
 $color-outline-darker: var(--color-outline-darker, darken($color-black, 30%));
+$color-outline-invert: var(--color-outline-invert, invert($color-black));
 
 // Font colors
 $color-font-light: var(--color-font-light, $color-white);

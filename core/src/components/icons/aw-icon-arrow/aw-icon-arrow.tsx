@@ -11,7 +11,7 @@ import { getDirection, getSize } from '../functions'
 export class AwIconArrowDown {
 
   @Prop()
-  color?: string = '#000'
+  color?: string
 
   @Prop()
   direction?: Direction = 'down'
@@ -29,13 +29,13 @@ export class AwIconArrowDown {
     }
 
     const svgStyles = {
-      stroke: `${this.color}`,
+      stroke: `${this.color ? this.color : 'currentColor'}`,
       transform: `rotate(${getDirection(this.direction)})`,
       transition: `${this.noTransition ? 'unset' : 'all 0.4s ease-out'}`
     }
 
     return (
-      <div style={containerStyles}>
+      <div style={containerStyles} class="icon-container">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
