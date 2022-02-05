@@ -12,7 +12,9 @@ export class AwAccordionContent {
   })
   name: string
 
-  @Prop()
+  @Prop({
+    mutable: true
+  })
   isOpened?: boolean = false
 
   @Prop()
@@ -44,7 +46,6 @@ export class AwAccordionContent {
   }
 
   render() {
-
     const mainContentClasses = `
       main-content
       ${this.isOpened ? '--opened' : ''}

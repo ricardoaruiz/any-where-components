@@ -206,6 +206,20 @@
           </div>
         </div>
       </aw-accordion-content>
+
+      <aw-accordion-content name="switch" title="Switch" is-opened="true">
+        <h3>Switch</h3>
+        <div class="container-flex-column">
+          <aw-switch id="switch1" disabled="false"></aw-switch>
+          <aw-switch id="switch2" disabled="true"></aw-switch>
+          <aw-switch id="switch3" is-on="true"></aw-switch>
+          <aw-switch id="switch31" is-on disabled></aw-switch>
+          <aw-switch id="switch4" label="Switch 4 right label" disabled="true"></aw-switch>
+          <aw-switch id="switch5" label="Switch 5 left label" label-position="left" disabled></aw-switch>
+          <aw-switch id="switch6" label="Switch 6 up label" label-position="top" disabled="false"></aw-switch>
+          <aw-switch id="switch7" label="Switch 7 bottom label" label-position="bottom" disabled></aw-switch>
+        </div>
+      </aw-accordion-content>
     </aw-accordion>
   </body>
 
@@ -236,5 +250,21 @@
     document.querySelector('#outline').addEventListener('click', () => {
       buttonClicked.innerHTML = 'The outlineButton was clicked'
     })
+
+    const switch1 = document.querySelector('#switch1')
+    switch1.addEventListener('toggle', (event) => {
+      switch1.isOn = event.detail
+    })
+
+    const switch3 = document.querySelector('#switch3')
+    switch3.addEventListener('toggle', (event) => {
+      switch3.isOn = event.detail
+    })
+
+    const switch6 = document.querySelector('#switch6')
+    switch6.addEventListener('toggle', (event) => {
+      switch6.isOn = event.detail
+    })
+
   </script>
 </html>

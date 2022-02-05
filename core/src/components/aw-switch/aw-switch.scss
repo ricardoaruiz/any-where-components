@@ -1,0 +1,85 @@
+@import '../../global/variables';
+
+$switch_padding: 1px;
+
+:host {
+  display: block;
+}
+
+.switch_label {
+  display: inline-block;
+
+  &.disabled {
+    color: $color-gray;
+  }
+}
+
+.switch_container {
+  display: flex;
+
+  &.column {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &.top .switch_label {
+    margin-bottom: $spaces-025;
+  }
+
+  &.bottom .switch_label {
+    margin-top: $spaces-025;
+  }
+
+  &.row {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &.left .switch_label {
+    margin-right: $spaces-025;
+  }
+
+  &.right .switch_label {
+    margin-left: $spaces-025;
+  }
+}
+
+.switch_body {
+  position: relative;
+  width: $spaces-3;
+  height: $spaces-125;
+  border: $border-1-gray;
+  border-radius: $spaces-125;
+  padding: $switch_padding;
+  cursor: pointer;
+
+  &.disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+.switch_selector {
+  position: absolute;
+  width: $spaces-125;
+  height: $spaces-125;
+  border-radius: 50%;
+  background-color: $color-black;
+  right: calc($spaces-3 - $spaces-125);
+  transition: right $transition-04-ease-out,
+              background-color $transition-04-ease-out;
+
+  &.on {
+    background-color: $color-primary;
+    right: $switch_padding;
+
+    &.disabled {
+      background-color: $color-primary-light;
+    }
+  }
+
+  &.disabled {
+    background-color: $color-gray;
+  }
+
+}

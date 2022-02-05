@@ -7,6 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { ButtonSize, ButtonType, ButtonVariant } from "./components/aw-button/types";
 import { Direction, Size } from "./components/icons/types";
+import { LabelPosition } from "./components/aw-switch/aw-switch";
 export namespace Components {
     interface AwAccordion {
         "exclusive": boolean;
@@ -56,6 +57,12 @@ export namespace Components {
         "noTransition"?: boolean;
         "size"?: Size;
     }
+    interface AwSwitch {
+        "disabled"?: boolean;
+        "isOn"?: boolean;
+        "label"?: string;
+        "labelPosition"?: LabelPosition;
+    }
     interface AwvComponentGroup {
         "title": string;
     }
@@ -91,6 +98,12 @@ declare global {
         prototype: HTMLAwIconSearchElement;
         new (): HTMLAwIconSearchElement;
     };
+    interface HTMLAwSwitchElement extends Components.AwSwitch, HTMLStencilElement {
+    }
+    var HTMLAwSwitchElement: {
+        prototype: HTMLAwSwitchElement;
+        new (): HTMLAwSwitchElement;
+    };
     interface HTMLAwvComponentGroupElement extends Components.AwvComponentGroup, HTMLStencilElement {
     }
     var HTMLAwvComponentGroupElement: {
@@ -103,6 +116,7 @@ declare global {
         "aw-button": HTMLAwButtonElement;
         "aw-icon-arrow": HTMLAwIconArrowElement;
         "aw-icon-search": HTMLAwIconSearchElement;
+        "aw-switch": HTMLAwSwitchElement;
         "awv-component-group": HTMLAwvComponentGroupElement;
     }
 }
@@ -157,6 +171,13 @@ declare namespace LocalJSX {
         "noTransition"?: boolean;
         "size"?: Size;
     }
+    interface AwSwitch {
+        "disabled"?: boolean;
+        "isOn"?: boolean;
+        "label"?: string;
+        "labelPosition"?: LabelPosition;
+        "onToggle"?: (event: CustomEvent<boolean>) => void;
+    }
     interface AwvComponentGroup {
         "title"?: string;
     }
@@ -166,6 +187,7 @@ declare namespace LocalJSX {
         "aw-button": AwButton;
         "aw-icon-arrow": AwIconArrow;
         "aw-icon-search": AwIconSearch;
+        "aw-switch": AwSwitch;
         "awv-component-group": AwvComponentGroup;
     }
 }
@@ -178,6 +200,7 @@ declare module "@stencil/core" {
             "aw-button": LocalJSX.AwButton & JSXBase.HTMLAttributes<HTMLAwButtonElement>;
             "aw-icon-arrow": LocalJSX.AwIconArrow & JSXBase.HTMLAttributes<HTMLAwIconArrowElement>;
             "aw-icon-search": LocalJSX.AwIconSearch & JSXBase.HTMLAttributes<HTMLAwIconSearchElement>;
+            "aw-switch": LocalJSX.AwSwitch & JSXBase.HTMLAttributes<HTMLAwSwitchElement>;
             "awv-component-group": LocalJSX.AwvComponentGroup & JSXBase.HTMLAttributes<HTMLAwvComponentGroupElement>;
         }
     }

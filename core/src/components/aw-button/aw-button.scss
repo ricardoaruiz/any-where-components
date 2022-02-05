@@ -41,6 +41,7 @@ button {
   align-items: center;
 
   color: $color-font-light;
+  transition: all $transition-04-ease-out;
 
   &.primary {
     @include variant('primary');
