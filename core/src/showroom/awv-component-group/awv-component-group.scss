@@ -1,4 +1,4 @@
-@import '../../global/variables';
+@import '../../global/global';
 
 @mixin box {
   padding: $spaces-050;
@@ -13,8 +13,8 @@
 }
 
 header {
-  padding: $spaces-050;
-  border-radius: $border-radius-050;
+  padding: $space-2;
+  border-radius: $border-radius-lg;
   border: $border-1-gray;
 
   display: flex;
@@ -28,17 +28,17 @@ header {
   & h1 {
     margin: 0;
     padding: 0;
-    font-size: $font-size-small;
+    font-size: $font-size-sm;
   }
 
   &:hover {
     background-color: $color-primary-light;
-    color: $color-font-light;
+    color: $font-color-light;
   }
 
   &.opened {
     background-color: $color-primary-light;
-    color: $color-font-light;
+    color: $font-color-light;
     border-bottom: unset;
     border-bottom-left-radius: unset;
     border-bottom-right-radius: unset;
@@ -46,11 +46,11 @@ header {
 }
 
 .content {
-  padding: $spaces-050;
+  padding: $space-8;
   border: $border-1-gray;
   border-top: unset;
-  border-bottom-left-radius: $border-radius-050;
-  border-bottom-right-radius: $border-radius-050;
+  border-bottom-left-radius: $border-radius-lg;
+  border-bottom-right-radius: $border-radius-lg;
 
   max-height: 0;
   visibility: hidden;

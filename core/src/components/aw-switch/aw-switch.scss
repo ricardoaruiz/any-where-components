@@ -1,4 +1,4 @@
-@import '../../global/variables';
+@import '../../global/global';
 
 $switch_padding: 1px;
 
@@ -10,7 +10,7 @@ $switch_padding: 1px;
   display: inline-block;
 
   &.disabled {
-    color: $color-gray;
+    color: $gray-500;
   }
 }
 
@@ -23,11 +23,11 @@ $switch_padding: 1px;
   }
 
   &.top .switch_label {
-    margin-bottom: $spaces-025;
+    margin-bottom: $space-1;
   }
 
   &.bottom .switch_label {
-    margin-top: $spaces-025;
+    margin-top: $space-1;
   }
 
   &.row {
@@ -36,20 +36,20 @@ $switch_padding: 1px;
   }
 
   &.left .switch_label {
-    margin-right: $spaces-025;
+    margin-right: $space-1;
   }
 
   &.right .switch_label {
-    margin-left: $spaces-025;
+    margin-left: $space-1;
   }
 }
 
 .switch_body {
   position: relative;
-  width: $spaces-3;
-  height: $spaces-125;
+  width: $space-12;
+  height: $space-5;
   border: $border-1-gray;
-  border-radius: $spaces-125;
+  border-radius: $space-5;
   padding: $switch_padding;
   cursor: pointer;
 
@@ -61,11 +61,11 @@ $switch_padding: 1px;
 
 .switch_selector {
   position: absolute;
-  width: $spaces-125;
-  height: $spaces-125;
+  width: $space-5;
+  height: $space-5;
   border-radius: 50%;
-  background-color: $color-black;
-  right: calc($spaces-3 - $spaces-125);
+  background-color: $black;
+  right: calc($space-12 - $space-5);
   transition: right $transition-04-ease-out,
               background-color $transition-04-ease-out;
 
@@ -79,7 +79,7 @@ $switch_padding: 1px;
   }
 
   &.disabled {
-    background-color: $color-gray;
+    background-color: $gray-500;
   }
 
 }

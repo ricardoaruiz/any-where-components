@@ -1,5 +1,5 @@
 @use "sass:map";
-@import '../../global/variables';
+@import '../../global/global';
 
 @mixin variant($variant: 'primary') {
   background-color: map.get($colors-map, $variant);
@@ -32,7 +32,7 @@ button {
   cursor: pointer;
   outline: none;
   border: 2px solid transparent;
-  border-radius: $border-radius-025;
+  border-radius: $border-radius-base;
   font-weight: 600;
   letter-spacing: 2px;
 
@@ -40,7 +40,7 @@ button {
   justify-content: center;
   align-items: center;
 
-  color: $color-font-light;
+  color: $font-color-light;
   transition: all $transition-04-ease-out;
 
   &.primary {
@@ -62,11 +62,11 @@ button {
   &.outline {
     background-color: $color-outline;
     border: $border-2-dark;
-    color: $color-font-dark;
+    color: $font-color-dark;
 
     &:hover {
       background-color: $color-outline-dark;
-      color: $color-font-light;
+      color: $font-color-light;
     }
     &:active {
       background-color: $color-outline-darker;
@@ -74,10 +74,10 @@ button {
     &:disabled {
       background-color: transparent;
       border: $border-2-gray;
-      color: $color-font-gray;
+      color: $font-color-gray;
     }
     &:focus {
-      border: 2px solid darken($color-black, 30%);
+      border: 2px solid darken($black, 30%);
     }
   }
 
@@ -86,23 +86,23 @@ button {
   }
 
   &.small {
-    font-size: $font-size-small;
-    padding: $spaces-025 $spaces-050;
+    font-size: $font-size-sm;
+    padding: $space-1 $space-2;
   }
 
   &.medium {
-    font-size: $font-size-medium;
-    padding: $spaces-050 $spaces-075;
+    font-size: $font-size-md;
+    padding: $space-2 $space-3;
   }
 
   &.large {
-    font-size: $font-size-large;
-    padding: $spaces-075 $spaces-1;
+    font-size: $font-size-lg;
+    padding: $space-3 $space-4;
   }
 
   &.huge {
-    font-size: $font-size-xlarge;
-    padding: $spaces-1 $spaces-125;
+    font-size: $font-size-xl;
+    padding: $space-4 $space-5;
   }
 
   &.blocked {
