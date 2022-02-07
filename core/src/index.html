@@ -24,11 +24,20 @@
         max-width: 800px;
         margin: 0 auto;
       }
+
       .light-theme {
         background-color: #fff;
       }
+      .light-theme h2,
+      .light-theme h3 {
+        color: #333;
+      }
       .dark-theme {
         background-color: #000;
+      }
+      .dark-theme h2,
+      .dark-theme h3 {
+        color: #fff;
       }
       .container-flex-column {
         margin-bottom: 20px;
@@ -44,7 +53,7 @@
     </style>
   </head>
 
-  <body class="light-theme">
+  <body class1="light-theme">
     <button type="button" id="toggleTheme">Go to Dark mode</button>
     <button type="button" id="removeTheme">Remove theme</button>
 
@@ -165,7 +174,7 @@
       </aw-accordion-content>
 
       <aw-accordion-content name="icons" title="Ícones">
-        
+
         <h3>Arrow</h3>
         <div class="container-flex-row">
           <aw-icon-arrow

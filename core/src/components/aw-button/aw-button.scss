@@ -61,8 +61,8 @@ button {
 
   &.outline {
     background-color: $color-outline;
-    border: $border-2-dark;
-    color: $font-color-dark;
+    border: 2px solid $color-outline-invert;
+    color: $color-outline-invert;
 
     &:hover {
       background-color: $color-outline-dark;
@@ -77,7 +77,7 @@ button {
       color: $font-color-gray;
     }
     &:focus {
-      border: 2px solid $color-outline-darker;
+      border: 2px solid $color-outline-light;
     }
   }
 

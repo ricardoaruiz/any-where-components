@@ -6,6 +6,8 @@
 @import './transitions';
 
 :host-context(.light-theme) {
+  --full-contrast: var(--black);
+
   --color-primary: var(--blue-400);
   --color-primary-light: var(--blue-200);
   --color-primary-dark: var(--blue-500);
@@ -31,13 +33,15 @@
   --color-warning-invert: var(--orange-50);
 
   --color-outline: transparent;
-  --color-outline-light: var(--gray-200);
-  --color-outline-dark: var(--gray-500);
-  --color-outline-darker: var(--gray-600);
-  --color-outline-invert: var(--gray-400);
+  --color-outline-light: var(--gray-300);
+  --color-outline-dark: var(--gray-700);
+  --color-outline-darker: var(--gray-800);
+  --color-outline-invert: var(--gray-500);
 }
 
 :host-context(.dark-theme) {
+  --full-contrast: var(--white);
+
   --color-primary: var(--blue-600);
   --color-primary-light: var(--blue-400);
   --color-primary-dark: var(--blue-700);
@@ -62,7 +66,7 @@
   --color-warning-darker: var(--orange-800);
   --color-warning-invert: var(--orange-50);
 
-  --color-outline: transparent;
+  --color-outline: $fff;
   --color-outline-light: var(--gray-400);
   --color-outline-dark: var(--gray-700);
   --color-outline-darker: var(--gray-800);
@@ -72,6 +76,7 @@
 // SASS Variables
 $black: var(--black);
 $white: var(--white);
+$full-contrast: var(--full-contrast);
 
 $color-primary: var(--color-primary);
 $color-primary-light: var(--color-primary-light);
