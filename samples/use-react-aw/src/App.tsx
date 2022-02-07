@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { AwButton } from 'react-aw'
 
 import './App.css'
@@ -6,6 +7,7 @@ import './App.css'
 function App() {
 
   const [numClicks, setNumClicks] = React.useState(0)
+  const [currentTheme, setCurrentTheme] = React.useState('light')
 
   const sayHello = () => {
     console.log('Hello React - sayHelloNativeEvent')
@@ -14,7 +16,24 @@ function App() {
   const sayHelloCustomEvent = () => {
     console.log('Hello React - sayHelloCustomEvent')
     setNumClicks(state => state + 1)
+    
+    const body = document.querySelector('body')
+    const isLightTheme = body?.classList.contains('light-theme')
+    if (isLightTheme) {
+      body?.classList.remove('light-theme')
+      body?.classList.add('dark-theme')
+      setCurrentTheme('Light')
+      return
+    }
+    body?.classList.remove('dark-theme')
+    body?.classList.add('light-theme')
+    setCurrentTheme('Dark')
+    
   }
+
+  React.useEffect(() => {
+    document.querySelector('body')?.classList.add('light-theme')
+  }, [])
 
   return (
     <div className="container">
@@ -27,7 +46,7 @@ function App() {
           onClick={sayHello}
           onAwClicked={sayHelloCustomEvent}
         >
-          Botão
+          Trocar para o tema {currentTheme}
         </AwButton>
         <p>This button was clicked {numClicks} times</p>
 

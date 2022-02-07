@@ -4,6 +4,7 @@ import { sass } from '@stencil/sass';
 
 export const config: Config = {
   namespace: 'aw-components',
+  globalStyle: './src/global/global.scss',
   outputTargets: [
     react({
       componentCorePackage: 'aw-components',

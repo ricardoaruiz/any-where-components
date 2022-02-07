@@ -4,16 +4,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <title>Stencil Component Starter</title>
-
     <script type="module" src="/build/aw-components.esm.js"></script>
     <script nomodule src="/build/aw-components.js"></script>
+    <link rel="stylesheet" href="/build/aw-components.css" />
 
     <style>
       :root {
-        --xcolor-primary: #008000;
-        --xcolor-primary-light: #9edf9e;
-        --xcolor-primary-dark: #036603;
-        --xcolor-primary-darker: #023a02;
+        --color-primary: #008000;
+        --color-primary-light: #9edf9e;
+        --color-primary-dark: #036603;
+        --color-primary-darker: #023a02;
       }
 
       * {
@@ -37,7 +37,11 @@
       }
     </style>
   </head>
-  <body>
+
+  <body class="light-theme">
+    <button type="button" id="toggleTheme">Go to Dark mode</button>
+    <button type="button" id="removeTheme">Remove theme</button>
+
     <aw-accordion>
       <aw-accordion-content name="buttons" title="Botões">
         <div class="container-flex-column">
@@ -266,5 +270,26 @@
       switch6.isOn = event.detail
     })
 
+    const body = document.querySelector('body')
+    const toggleTheme = document.querySelector('#toggleTheme')
+    toggleTheme.addEventListener('click', () => {
+      const isLightTheme = body.classList.contains('light-theme')
+      if (isLightTheme) {
+        body.classList.remove('light-theme')
+        body.classList.add('dark-theme')
+        toggleTheme.textContent = 'Go to Light mode'
+        return
+      }
+      body.classList.remove('dark-theme')
+      body.classList.add('light-theme')
+      toggleTheme.textContent = 'Go to Dark mode'
+    })
+
+    document.querySelector('#removeTheme').addEventListener('click', () => {
+      body.classList.remove('light-theme')
+      body.classList.remove('dark-theme')
+    })
+
   </script>
+
 </html>

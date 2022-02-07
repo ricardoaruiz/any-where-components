@@ -1,6 +1,14 @@
+/* :root {
+  --color-primary: #008000;
+  --color-primary-light: #9edf9e;
+  --color-primary-dark: #036603;
+  --color-primary-darker: #023a02;
+} */
+
 * {
   font-family: sans-serif;
 }
+
 .container {
   max-width: 300px;
   margin: 0 auto;

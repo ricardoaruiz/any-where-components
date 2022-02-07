@@ -1,0 +1,136 @@
+@import './font';
+@import './border';
+@import './spaces';
+@import './sizes';
+@import './breakpoints';
+@import './transitions';
+
+:host-context(body.light-theme) {
+  --color-primary: var(--blue-400);
+  --color-primary-light: var(--blue-200);
+  --color-primary-dark: var(--blue-500);
+  --color-primary-darker: var(--blue-600);
+  --color-primary-invert: var(--blue-50);
+
+  --color-success: var(--green-400);
+  --color-success-light: var(--green-200);
+  --color-success-dark: var(--green-500);
+  --color-success-darker: var(--green-600);
+  --color-success-invert: var(--green-50);
+
+  --color-danger: var(--red-400);
+  --color-danger-light: var(--red-200);
+  --color-danger-dark: var(--red-500);
+  --color-danger-darker: var(--red-600);
+  --color-danger-invert: var(--red-50);
+
+  --color-warning: var(--orange-400);
+  --color-warning-light: var(--orange-200);
+  --color-warning-dark: var(--orange-500);
+  --color-warning-darker: var(--orange-600);
+  --color-warning-invert: var(--orange-50);
+
+  --color-outline: transparent;
+  --color-outline-light: var(--gray-200);
+  --color-outline-dark: var(--gray-500);
+  --color-outline-darker: var(--gray-600);
+  --color-outline-invert: var(--gray-400);
+}
+
+:host-context(body.dark-theme) {
+  --color-primary: var(--blue-600);
+  --color-primary-light: var(--blue-400);
+  --color-primary-dark: var(--blue-700);
+  --color-primary-darker: var(--blue-800);
+  --color-primary-invert: var(--blue-50);
+
+  --color-success: var(--green-600);
+  --color-success-light: var(--green-400);
+  --color-success-dark: var(--green-700);
+  --color-success-darker: var(--green-800);
+  --color-success-invert: var(--green-50);
+
+  --color-danger: var(--red-600);
+  --color-danger-light: var(--red-400);
+  --color-danger-dark: var(--red-700);
+  --color-danger-darker: var(--red-800);
+  --color-danger-invert: var(--red-50);
+
+  --color-warning: var(--orange-600);
+  --color-warning-light: var(--orange-400);
+  --color-warning-dark: var(--orange-700);
+  --color-warning-darker: var(--orange-800);
+  --color-warning-invert: var(--orange-50);
+
+  --color-outline: transparent;
+  --color-outline-light: var(--gray-400);
+  --color-outline-dark: var(--gray-700);
+  --color-outline-darker: var(--gray-800);
+  --color-outline-invert: var(--gray-800);
+}
+
+// SASS Variables
+$black: var(--black);
+$white: var(--white);
+
+$color-primary: var(--color-primary);
+$color-primary-light: var(--color-primary-light);
+$color-primary-dark: var(--color-primary-dark);
+$color-primary-darker: var(--color-primary-darker);
+$color-primary-invert: var(--color-primary-invert);
+
+$color-success: var(--color-success);
+$color-success-light: var(--color-success-light);
+$color-success-dark: var(--color-success-dark);
+$color-success-darker: var(--color-success-darker);
+$color-success-invert: var(--color-success-invert);
+
+$color-danger: var(--color-danger);
+$color-danger-light: var(--color-danger-light);
+$color-danger-dark: var(--color-danger-dark);
+$color-danger-darker: var(--color-danger-darker);
+$color-danger-invert: var(--color-danger-invert);
+
+$color-warning: var(--color-warning);
+$color-warning-light: var(--color-warning-light);
+$color-warning-dark: var(--color-warning-dark);
+$color-warning-darker: var(--color-warning-darker);
+$color-warning-invert: var(--color-warning-invert);
+
+$color-outline: transparent;
+$color-outline-light: var(--color-outline-light);
+$color-outline-dark: var(--color-outline-dark);
+$color-outline-darker: var(--color-outline-darker);
+$color-outline-invert: var(--color-outline-invert);
+
+$colors-map: (
+  "primary": $color-primary,
+  "primary-light": $color-primary-light,
+  "primary-dark": $color-primary-dark,
+  "primary-darker": $color-primary-darker,
+  "primary-invert": $color-primary-invert,
+
+  "success": $color-success,
+  "success-light": $color-success-light,
+  "success-dark": $color-success-dark,
+  "success-darker": $color-success-darker,
+  "success-invert": $color-success-invert,
+
+  "danger": $color-danger,
+  "danger-light": $color-danger-light,
+  "danger-dark": $color-danger-dark,
+  "danger-darker": $color-danger-darker,
+  "danger-invert": $color-danger-invert,
+
+  "warning": $color-warning,
+  "warning-light": $color-warning-light,
+  "warning-dark": $color-warning-dark,
+  "warning-darker": $color-warning-darker,
+  "warning-invert": $color-warning-invert,
+
+  "outline": $color-outline,
+  "outline-light": $color-outline-light,
+  "outline-dark": $color-outline-dark,
+  "outline-darker": $color-outline-darker,
+  "outline-invert": $color-outline-invert,
+);

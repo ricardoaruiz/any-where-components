@@ -1,5 +1,5 @@
 @use "sass:map";
-@import '../../global/global';
+@import '../../global/theme';
 
 @mixin variant($variant: 'primary') {
   background-color: map.get($colors-map, $variant);
@@ -77,7 +77,7 @@ button {
       color: $font-color-gray;
     }
     &:focus {
-      border: 2px solid darken($black, 30%);
+      border: 2px solid $color-outline-darker;
     }
   }
 

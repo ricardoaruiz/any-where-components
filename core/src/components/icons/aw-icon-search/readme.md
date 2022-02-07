@@ -7,12 +7,12 @@
 
 ## Properties
 
-| Property       | Attribute       | Description | Type                                               | Default   |
-| -------------- | --------------- | ----------- | -------------------------------------------------- | --------- |
-| `color`        | `color`         |             | `string`                                           | `'#000'`  |
-| `direction`    | `direction`     |             | `"down" \| "inverse" \| "left" \| "right" \| "up"` | `'down'`  |
-| `noTransition` | `no-transition` |             | `boolean`                                          | `false`   |
-| `size`         | `size`          |             | `"huge" \| "large" \| "medium" \| "small"`         | `'small'` |
+| Property       | Attribute       | Description | Type                                               | Default     |
+| -------------- | --------------- | ----------- | -------------------------------------------------- | ----------- |
+| `color`        | `color`         |             | `string`                                           | `undefined` |
+| `direction`    | `direction`     |             | `"down" \| "inverse" \| "left" \| "right" \| "up"` | `'down'`    |
+| `noTransition` | `no-transition` |             | `boolean`                                          | `false`     |
+| `size`         | `size`          |             | `"huge" \| "large" \| "medium" \| "small"`         | `'small'`   |
 
 
 ----------------------------------------------

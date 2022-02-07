@@ -37,6 +37,6 @@ $letter-spacings-wide:    0.025em;
 $letter-spacings-wider:   0.05em;
 $letter-spacings-widest:  0.1em;
 
-$font-color-light: var(--font-color-light, $white);
-$font-color-dark: var(--font-color-dark, $black);
-$font-color-gray: var(--font-color-gray, $gray-500);
+$font-color-light: var(--font-color-light, var(--white));
+$font-color-dark: var(--font-color-dark, var(--black));
+$font-color-gray: var(--font-color-gray, var(--gray-500));
