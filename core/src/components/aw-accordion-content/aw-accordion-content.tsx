@@ -1,4 +1,4 @@
-import { Component, h, Prop, Event, EventEmitter, Watch, State } from '@stencil/core';
+import { Component, h, Prop, Event, EventEmitter, Watch } from '@stencil/core';
 
 @Component({
   tag: 'aw-accordion-content',
@@ -20,9 +20,6 @@ export class AwAccordionContent {
   @Prop()
   title: string
 
-  @State()
-  isHeaderHovered: boolean = false
-
   @Watch('isOpened')
   onOpen(newValue: boolean) {
     this.isOpened = newValue
@@ -35,6 +32,8 @@ export class AwAccordionContent {
   toogle: EventEmitter<string>
 
   handleClick(event: MouseEvent) {
+    event.stopPropagation()
+
     const clickedElement = (event.target as HTMLElement)
     if(clickedElement.nodeName.toLowerCase() === 'header') {
       this.toogle.emit(this.name)
@@ -57,10 +56,7 @@ export class AwAccordionContent {
         class="accordion_content"
         onClick={this.handleClick.bind(this)}
       >
-        <header
-          onMouseEnter={() => this.isHeaderHovered = true}
-          onMouseLeave={() => this.isHeaderHovered = false}
-        >
+        <header>
           <h3>{this.title}</h3>
           <aw-icon-arrow
             color="white"

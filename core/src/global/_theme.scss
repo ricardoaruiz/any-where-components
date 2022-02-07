@@ -7,6 +7,7 @@
 
 :host-context(.light-theme) {
   --full-contrast: var(--black);
+  --half-contrast: var(--gray-500);
 
   --color-primary: var(--blue-400);
   --color-primary-light: var(--blue-200);
@@ -41,6 +42,7 @@
 
 :host-context(.dark-theme) {
   --full-contrast: var(--white);
+  --half-contrast: var(--gray-500);
 
   --color-primary: var(--blue-600);
   --color-primary-light: var(--blue-400);
@@ -77,6 +79,7 @@
 $black: var(--black);
 $white: var(--white);
 $full-contrast: var(--full-contrast);
+$half-contrast: var(--half-contrast);
 
 $color-primary: var(--color-primary);
 $color-primary-light: var(--color-primary-light);

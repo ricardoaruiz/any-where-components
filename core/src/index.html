@@ -10,10 +10,10 @@
 
     <style>
       :root {
-        --color-primary: #008000;
-        --color-primary-light: #9edf9e;
-        --color-primary-dark: #036603;
-        --color-primary-darker: #023a02;
+        --xcolor-primary: #008000;
+        --xcolor-primary-light: #9edf9e;
+        --xcolor-primary-dark: #036603;
+        --xcolor-primary-darker: #023a02;
       }
 
       * {
@@ -26,19 +26,20 @@
       }
 
       .light-theme {
-        background-color: #fff;
+        background-color: var(--gray-300);
       }
       .light-theme h2,
       .light-theme h3 {
-        color: #333;
+        color: var(--black);
       }
       .dark-theme {
-        background-color: #000;
+        background-color: var(--gray-900);
       }
       .dark-theme h2,
       .dark-theme h3 {
-        color: #fff;
+        color: var(--white);
       }
+
       .container-flex-column {
         margin-bottom: 20px;
         display: flex;
@@ -53,9 +54,9 @@
     </style>
   </head>
 
-  <body class1="light-theme">
-    <button type="button" id="toggleTheme">Go to Dark mode</button>
-    <button type="button" id="removeTheme">Remove theme</button>
+  <body class="light-theme">
+    <aw-button type="button" id="toggleTheme" variant="outline">Go to Dark mode</aw-button>
+    <aw-button type="button" id="removeTheme" variant="warning">Remove theme</aw-button>
 
     <aw-accordion>
       <aw-accordion-content name="buttons" title="Botões">
@@ -223,7 +224,7 @@
         </div>
       </aw-accordion-content>
 
-      <aw-accordion-content name="switch" title="Switch" is-opened="true">
+      <aw-accordion-content name="switch" title="Switch" is-opened="false">
         <div class="container-flex-column">
           <aw-switch id="switch1" disabled="false"></aw-switch>
           <aw-switch id="switch2" disabled="true"></aw-switch>
@@ -299,6 +300,7 @@
     document.querySelector('#removeTheme').addEventListener('click', () => {
       body.classList.remove('light-theme')
       body.classList.remove('dark-theme')
+      toggleTheme.textContent = "Go to Light mode"
     })
 
   </script>

@@ -19,6 +19,15 @@
     & h3 {
       margin: 0;
       padding: 0;
+      pointer-events: none;
+    }
+
+    & aw-icon-arrow {
+      pointer-events: none;
+    }
+
+    &:hover {
+      background-color: $color-primary-dark;
     }
   }
 

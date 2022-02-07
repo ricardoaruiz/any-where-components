@@ -76,7 +76,9 @@ export class AwButton {
         tabIndex={1}
         onClick={() => this.awClicked.emit()}
       >
-        <slot />
+        <div class="content">
+          <slot />
+        </div>
       </button>
     );
   }
