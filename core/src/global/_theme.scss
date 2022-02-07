@@ -5,7 +5,7 @@
 @import './breakpoints';
 @import './transitions';
 
-:host-context(body.light-theme) {
+:host-context(.light-theme) {
   --color-primary: var(--blue-400);
   --color-primary-light: var(--blue-200);
   --color-primary-dark: var(--blue-500);
@@ -37,7 +37,7 @@
   --color-outline-invert: var(--gray-400);
 }
 
-:host-context(body.dark-theme) {
+:host-context(.dark-theme) {
   --color-primary: var(--blue-600);
   --color-primary-light: var(--blue-400);
   --color-primary-dark: var(--blue-700);
@@ -66,7 +66,7 @@
   --color-outline-light: var(--gray-400);
   --color-outline-dark: var(--gray-700);
   --color-outline-darker: var(--gray-800);
-  --color-outline-invert: var(--gray-800);
+  --color-outline-invert: var(--white);
 }
 
 // SASS Variables

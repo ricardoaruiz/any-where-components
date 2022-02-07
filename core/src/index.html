@@ -24,6 +24,12 @@
         max-width: 800px;
         margin: 0 auto;
       }
+      .light-theme {
+        background-color: #fff;
+      }
+      .dark-theme {
+        background-color: #000;
+      }
       .container-flex-column {
         margin-bottom: 20px;
         display: flex;
@@ -159,60 +165,56 @@
       </aw-accordion-content>
 
       <aw-accordion-content name="icons" title="Ícones">
-        <div>
-          <h3>Arrow</h3>
-          <div class="container-flex-row">
-            <aw-icon-arrow
-              id="firstArrowIcon"
-              direction="up"
-            ></aw-icon-arrow>
+        
+        <h3>Arrow</h3>
+        <div class="container-flex-row">
+          <aw-icon-arrow
+            id="firstArrowIcon"
+            direction="up"
+          ></aw-icon-arrow>
 
-            <aw-icon-arrow
-              id="secondArrowIcon"
-              direction="right"
-              size="medium"
-              color="blue"
-              noTransition="true"
-            ></aw-icon-arrow>
+          <aw-icon-arrow
+            id="secondArrowIcon"
+            direction="right"
+            size="medium"
+            color="blue"
+            noTransition="true"
+          ></aw-icon-arrow>
 
-            <aw-icon-arrow
-              size="large"
-              color="#f00">
-            </aw-icon-arrow>
+          <aw-icon-arrow
+            size="large"
+            color="#f00">
+          </aw-icon-arrow>
 
-            <aw-icon-arrow
-              color="green"
-              direction="left"
-              size="huge">
-            </aw-icon-arrow>
-          </div>
+          <aw-icon-arrow
+            color="green"
+            direction="left"
+            size="huge">
+          </aw-icon-arrow>
         </div>
 
-        <div>
-          <h3>Search</h3>
-          <div class="container-flex-row">
-            <aw-icon-search></aw-icon-search>
-            <aw-icon-search
-              size="medium"
-              color="blue"
-            ></aw-icon-search>
+        <h3>Search</h3>
+        <div class="container-flex-row">
+          <aw-icon-search></aw-icon-search>
+          <aw-icon-search
+            size="medium"
+            color="blue"
+          ></aw-icon-search>
 
-            <aw-icon-search
-              size="large"
-              color="#f00">
-            </aw-icon-search>
+          <aw-icon-search
+            size="large"
+            color="#f00">
+          </aw-icon-search>
 
-            <aw-icon-search
-              direction="inverse"
-              color="green"
-              size="huge">
-            </aw-icon-search>
-          </div>
+          <aw-icon-search
+            direction="inverse"
+            color="green"
+            size="huge">
+          </aw-icon-search>
         </div>
       </aw-accordion-content>
 
       <aw-accordion-content name="switch" title="Switch" is-opened="true">
-        <h3>Switch</h3>
         <div class="container-flex-column">
           <aw-switch id="switch1" disabled="false"></aw-switch>
           <aw-switch id="switch2" disabled="true"></aw-switch>
